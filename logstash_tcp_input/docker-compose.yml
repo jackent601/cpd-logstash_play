@@ -1,0 +1,8 @@
+services:
+  logstash:
+    image: docker.elastic.co/logstash/logstash:8.8.2
+    volumes:
+      - ./logstash/pipeline/test_config.conf:/usr/share/logstash/pipeline/logstash.conf
+      - ./logstash/config/test_config.conf:/usr/share/logstash/config/logstash-sample.conf
+    ports:
+      - "5044:5044"
